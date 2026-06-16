@@ -144,9 +144,14 @@ export default function Home() {
                 className="w-full text-xl font-bold text-stone-800 focus:outline-none bg-transparent placeholder:text-stone-300"
                 placeholder="Title"
               />
-              <p className="text-xs text-stone-400 mt-1">
-                Last edited {fmt(selected.updatedAt)}
-              </p>
+              <div className="flex items-center justify-between mt-1">
+                <p className="text-xs text-stone-400">
+                  Last edited {fmt(selected.updatedAt)}
+                </p>
+                <p className="text-xs text-stone-300">
+                  {selected.body.length} chars · {selected.body.trim().split(/\s+/).filter(Boolean).length} words
+                </p>
+              </div>
             </div>
             <textarea
               value={selected.body}
